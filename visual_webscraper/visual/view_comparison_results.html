@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Sim Labeller Summary</title>
+</head>
+<body>
+
+    <h1>Similar</h1>
+    <ul>
+    {% for row in similar_images %}
+        <li><img src="{{ row.image1 }}"> <img src="{{ row.image2 }}"> {{ row.colour_sim }}  {{ row.structural_sim }}</li>
+    {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h1>Different</h1>
+    <ul>
+    {% for row in different_images %}
+        <li><img src="{{ row.image1 }}"> <img src="{{ row.image2 }}"></li>
+    {% endfor %}
+    </ul>
+
+    <h1>Ambiguous</h1>
+    <ul>
+    {% for row in ambiguous_images %}
+        <li><img src="{{ row.image1 }}"> <img src="{{ row.image2 }}"></li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
